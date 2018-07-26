@@ -6,7 +6,7 @@ from PIL import Image, ImageDraw
 points = 512
 centerX = centerY = 500
 minRad = 10
-maxRad = 20
+maxRad = 13
 Rad = 10
 
 background = Image.new('RGBA',(1440,900),(255,255,255,255))
@@ -21,7 +21,7 @@ class Node:
         self.y = y
         self.next = None
 
-iters = 9
+iters = 5
 
 firstPoint = Node(0,1)
 lastPoint = Node(1,1)
@@ -69,6 +69,7 @@ while(point != None):
     pointlist.append((x,y))
     point = point.next
 
+points = len(pointlist)
 for i in range(len(pointlist)):
     draw.line((pointlist[i][0],pointlist[i][1],
         pointlist[(i+1)%points][0],pointlist[(i+1)%points][1]),fill=44)
