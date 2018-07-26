@@ -69,9 +69,6 @@ while(point != None):
     pointlist.append((x,y))
     point = point.next
 
-points = len(pointlist)
-for i in range(len(pointlist)):
-    draw.line((pointlist[i][0],pointlist[i][1],
-        pointlist[(i+1)%points][0],pointlist[(i+1)%points][1]),fill=44)
-
+color = (0,0,0,255)
+draw.polygon(pointlist,color,color)
 background.show();
